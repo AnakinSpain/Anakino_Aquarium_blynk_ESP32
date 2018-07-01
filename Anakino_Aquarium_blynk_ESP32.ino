@@ -80,8 +80,8 @@
 
 // Your WiFi credentials.
 // Set password to "" for open networks.
-char ssid[] = "atorcha";
-char pass[] = "X55-mCx-DVL-kF4";
+char ssid[] = "xxxx";
+char pass[] = "xxxx";
 
 ////////////////////////////////////////////////////////////////////////
 //DECLARACION DE VARIABLES Y PINES
@@ -143,7 +143,7 @@ int temp_ai;          // Variable para indicar si activa o no el aireador desde 
 /////////////////////////////////////////////////////////////////
 //Blynk
 ////////////////////////////////////////////////////////////////
-char auth[] = "4c9d2ca518b04366b3de5496f99c75dd";
+char auth[] = "xxxxxx";
 
   BLYNK_CONNECTED()     // This function will run every time Blynk connection is established
   {  
