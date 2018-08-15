@@ -3,7 +3,8 @@
 ///////////////////////////////////////////////////////////////
 void setup() {
  Serial.begin(9600);    //Iniciamos el puerto serie
-  
+
+//  WiFi.begin(ssid, pass);
   Blynk.begin(auth, ssid, pass);
   // You can also specify server:
   //Blynk.begin(auth, ssid, pass, "blynk-cloud.com", 8442);
@@ -13,14 +14,27 @@ void setup() {
   Serial.println("WiFi connected ");
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());
-
+  
+  ThingSpeak.begin(client);
+  
 //Asignamos los distintos PIN
-  pinMode(calentador, OUTPUT);  // Calentador     
-  pinMode(aireador, OUTPUT);  // Aireador
-  pinMode(lamp_uv, OUTPUT);  // Lampara UV
-  pinMode(luz, OUTPUT);  // 
-  pinMode(bomba, OUTPUT);   // Bomba rellenador 
-  pinMode(nivel_acu, INPUT);// Indicamos el puerto de control de la boya del acuario 
+  pinMode(calentador, OUTPUT); // Calentador     
+  pinMode(aireador, OUTPUT);   // Aireador
+  pinMode(lamp_uv, OUTPUT);    // Lampara UV
+  pinMode(luz, OUTPUT);        // 
+  pinMode(bomba, OUTPUT);      // Bomba rellenador
+  pinMode(ventilador, OUTPUT); // ventilador    
+  pinMode(nivel_acu, INPUT);   // Indicamos el puerto de control de la boya del acuario 
+  pinMode(LED_BUILTIN, OUTPUT); // LED integrado azul
+  servo1.attach(servoPin);
+
+  
+////////////////////////////////////////
+////////Configuraciones de pwm 
+/////////////////////////////////////////
+
+ledcSetup(vent_channel_0, pwm_base_freq, pwm_8_bit); // configuramos el canal 0 del ventilador
+ledcAttachPin(ventilador, vent_channel_0);  // asignamos el pin del ventilador al canal 0
   
 ////////////////////////////////////////
 ////////Con esto apagamos todos los reles. 
@@ -57,7 +71,7 @@ void setup() {
 void SetRele( int Pin, boolean Estado )  //Funcion que hace que el rele chino funcione bien y se puede poner LOW o HIGH segun corresponda.
 {
  
- digitalWrite( Pin, !Estado );
+ digitalWrite( Pin, Estado );
 
 }
 

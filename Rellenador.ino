@@ -8,8 +8,8 @@ void check_nivel(){
   
     if (modo_relleno == 1)
   {
-      Serial.print("modo rellenador activado");
-       Serial.println("");
+     // Serial.print("modo rellenador activado");
+     //  Serial.println("");
       
       nivel_estado = digitalRead(nivel_acu);
       
@@ -17,15 +17,15 @@ void check_nivel(){
       {
       SetRele(bomba, LOW);     // desactiva la bomba
       led1.off();
-     Serial.print("desactiva bomba");
-     Serial.println("");
+  //   Serial.print("desactiva bomba");
+  //   Serial.println("");
       }
    else  
    {
    SetRele(bomba, HIGH);
    led1.on();
-   Serial.print("activa bomba");
-   Serial.println("");
+ //  Serial.print("activa bomba");
+ //  Serial.println("");
    }
   } 
 
