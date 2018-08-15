@@ -97,14 +97,14 @@ int pwm_vent;  // variable que llevará el valor del pwm de 0 a 255
 
 // Your WiFi credentials.
 // Set password to "" for open networks.
-char ssid[] = "atorcha";
-char pass[] = "X55-mCx-DVL-kF4";
+char ssid[] = "xx";
+char pass[] = "xxx";
 WiFiClient  client;
 ////////////////////////////////////////////////////////////////////////
 //DECLARACION DE VARIABLES de THINGSPEAK
 ////////////////////////////////////////////////////////////////////////
  unsigned long myChannelNumber = 358672;
- const char * myWriteAPIKey = "K6GT1NEIV57XGXIL";
+ const char * myWriteAPIKey = "xxx";
  long previous_Millis_datos = 0;
 
 ////////////////////////////////////////////////////////////////////////
@@ -173,7 +173,7 @@ int temp_ai;          // Variable para indicar si activa o no el aireador desde 
 /////////////////////////////////////////////////////////////////
 //Blynk
 ////////////////////////////////////////////////////////////////
-char auth[] = "4c9d2ca518b04366b3de5496f99c75dd";
+char auth[] = "xxxx";
 
 BlynkTimer timer;
 
